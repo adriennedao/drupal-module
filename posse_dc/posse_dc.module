@@ -9,4 +9,12 @@ function posse_dc_preprocess(&$variables, $hook) {
 /* render portfolio_block on the homepage */
   $portfolio_block = views_embed_view('portfolio', 'block_1');
   $variables['portfolio_block'] = $portfolio_block;
+
+/* place services_block on the homepage */
+  $services_block = \Drupal\block\Entity\Block::load('services');
+  $services_block_content = \Drupal::entityManager()
+    ->getViewBuilder('block')
+    ->view($services_block);
+  $variables['services_block']= $services_block_content;
+
 }
