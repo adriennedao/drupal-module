@@ -1,9 +1,9 @@
 name: POSSE Default Content
-description: Module used to store the website's default Content
-package: Administration 
+description: Module used to render blocks content using hook and pass on to twig
+package: Administration
 
 type: module
-core: 8.x 
+core: 8.x
 
-dependencies: 
+dependencies:
   - drupal:default_content
