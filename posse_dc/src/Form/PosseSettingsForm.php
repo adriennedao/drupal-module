@@ -9,7 +9,6 @@ use Drupal\Core\Form\FormStateInterface;
  * Class PosseSettingsForm.
  */
 class PosseSettingsForm extends ConfigFormBase {
-
   /**
    * {@inheritdoc}
    */
@@ -18,14 +17,12 @@ class PosseSettingsForm extends ConfigFormBase {
       'posse_dc.possesettings',
     ];
   }
-
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
     return 'posse_settings';
   }
-
   /**
    * {@inheritdoc}
    */
@@ -133,8 +130,6 @@ class PosseSettingsForm extends ConfigFormBase {
         ->t('Third Service Offered Description'),
     '#default_value' => $config->get('service_3_body'),
     );
-
-     
 
     return parent::buildForm($form, $form_state);
   }
