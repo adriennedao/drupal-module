@@ -12,12 +12,16 @@ use Drupal\Core\Block\BlockBase;
  *  admin_label = @Translation("Services"),
  * )
  */
- class Services extends BlockBase {
-   
-   public function build() {
-     $build = [];
-     $build['services']['#markup']= 'Improve Your Online Presence';
+class Services extends BlockBase {
 
-     return $build;
-   }
- }
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    $build = [];
+    $build['services']['#markup'] = 'Improve Your Online Presence';
+
+    return $build;
+  }
+
+}

@@ -1,0 +1,19 @@
+<?php
+
+/*function to render the blog_posts on homepage */
+function posse_dc_preprocess(&$variables, $hook) {
+  $blog_block = views_embed_view('blog_posts', 'block_1');
+  $variables['blog_block'] = $blog_block; // put it in twig variable
+
+/* render portfolio_block on the homepage */
+  $portfolio_block = views_embed_view('portfolio', 'block_1');
+  $variables['portfolio_block'] = $portfolio_block;
+
+/* place services_block on the homepage */
+  $services_block = \Drupal\block\Entity\Block::load('services');
+  $services_block_content = \Drupal::entityManager()
+    ->getViewBuilder('block')
+    ->view($services_block);
+  $variables['services_block']= $services_block_content;
+
+}
